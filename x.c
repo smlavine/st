@@ -258,6 +258,8 @@ static int oldbutton = 3; /* button event on startup: 3 = release */
 
 int usealtcolors = 0; /* 1 to use alternate palette */
 
+int usealtcolors = 0; /* 1 to use alternate palette */
+
 void
 clipcopy(const Arg *dummy)
 {
@@ -294,6 +296,14 @@ void
 numlock(const Arg *dummy)
 {
 	win.mode ^= MODE_NUMLOCK;
+}
+
+void
+swapcolors(const Arg *dummy)
+{
+ usealtcolors = !usealtcolors;
+ xloadcols();
+ redraw();
 }
 
 void
@@ -764,6 +774,11 @@ ushort
 sixd_to_16bit(int x)
 {
 	return x == 0 ? 0 : 0x3737 + 0x2828 * x;
+}
+
+const char* getcolorname(int i)
+{
+    return (usealtcolors) ?  altcolorname[i] : colorname[i];
 }
 
 const char* getcolorname(int i)
