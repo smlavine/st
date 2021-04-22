@@ -95,6 +95,7 @@ unsigned int tabspaces = 4;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
+	/* dracula color theme */
 	/* 8 normal colors */
 	[0] = "#000000", /* black   */
 	[1] = "#ff5555", /* red     */
@@ -118,37 +119,51 @@ static const char *colorname[] = {
 	/* special colors */
 	[256] = "#282a36", /* background */
 	[257] = "#f8f8f2", /* foreground */
+	[258] = "#f8f8f2", /* defaultcs  */
+	[259] = "#8be9fd", /* defaultrcs */
 };
  
-/* Terminal colors for alternate (light) palette */
 static const char *altcolorname[] = {
-	/* solarized light */
-	"#eee8d5",  /*  0: black    */
-	"#dc322f",  /*  1: red      */
-	"#859900",  /*  2: green    */
-	"#b58900",  /*  3: yellow   */
-	"#268bd2",  /*  4: blue     */
-	"#d33682",  /*  5: magenta  */
-	"#2aa198",  /*  6: cyan     */
-	"#073642",  /*  7: white    */
-	"#fdf6e3",  /*  8: brblack  */
-	"#cb4b16",  /*  9: brred    */
-	"#93a1a1",  /* 10: brgreen  */
-	"#839496",  /* 11: bryellow */
-	"#657b83",  /* 12: brblue   */
-	"#6c71c4",  /* 13: brmagenta*/
-	"#586e75",  /* 14: brcyan   */
-	"#002b36",  /* 15: brwhite  */
+	/* default colorscheme of st */
+	/* 8 normal colors */
+	"black",
+	"red3",
+	"green3",
+	"yellow3",
+	"blue2",
+	"magenta3",
+	"cyan3",
+	"gray90",
+
+	/* 8 bright colors */
+	"gray50",
+	"red",
+	"green",
+	"yellow",
+	"#5c5cff",
+	"magenta",
+	"cyan",
+	"white",
+
+	[255] = 0,
+
+	/* more colors can be added after 255 to use with DefaultXX */
+	// these colors changed from default scheme to make compatible with dracula
+	// default{fg, bg, cs, rcs} colors
+	[256] = "black", /* copy of [0]; background */
+	[257] = "gray90", /* copy of [7]; foreground */
+	[258] = "#282a36", /* defaultcs */
+	[259] = "#f8f8f2", /* defaultrcs */
 };
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor
  */
-unsigned int defaultfg = 257;
 unsigned int defaultbg = 256;
-static unsigned int defaultcs = 257;
-static unsigned int defaultrcs = 257;
+unsigned int defaultfg = 257;
+static unsigned int defaultcs = 258;
+static unsigned int defaultrcs = 259;
 
 /*
  * Colors used, when the specific fg == defaultfg. So in reverse mode this
