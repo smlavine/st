@@ -26,6 +26,7 @@ the /usr/local namespace by default).
 
 Afterwards enter the following command to build and install st (if
 necessary as root):
+
 	```
     make clean install
 	```
@@ -35,6 +36,7 @@ necessary as root):
 
 If you did not install st with make clean install, you must compile
 the st terminfo entry with the following command:
+
 	```
     tic -sx st.info
 	```
