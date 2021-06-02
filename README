@@ -1,8 +1,10 @@
 smlss
 =====
-This is my build of st. It is deployed by [smlss](https://git.smlavine.com/smlss).
+This is my build of st. It is deployed by
+[smlss](https://git.smlavine.com/smlss).
 
 To contact me, Sebastian LaVine, send an email to <mail@smlavine.com>.
+
 
 st - simple terminal
 ====================
@@ -24,6 +26,7 @@ necessary as root):
 
     make clean install
 
+
 Running st
 ----------
 If you did not install st with make clean install, you must compile
@@ -32,6 +35,7 @@ the st terminfo entry with the following command:
     tic -sx st.info
 
 See the man page for additional details.
+
 
 Credits
 -------
