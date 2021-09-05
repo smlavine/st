@@ -98,10 +98,10 @@ static const char *colorname[] = {
 	/* dracula color theme */
 	/* 8 normal colors */
 	[0] = "#000000", /* black   */
-	[1] = "red3",    /* red - not dracula theme */
+	[1] = "#ff5555", /* red     */
 	[2] = "#50fa7b", /* green   */
 	[3] = "#f1fa8c", /* yellow  */
-	[4] = "blue2",   /* blue - not dracula theme */
+	[4] = "#bd93f9", /* blue    */
 	[5] = "#ff79c6", /* magenta */
 	[6] = "#8be9fd", /* cyan    */
 	[7] = "#bbbbbb", /* white   */
