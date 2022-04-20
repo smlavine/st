@@ -44,7 +44,7 @@ static unsigned int tripleclicktimeout = 600;
 int allowaltscreen = 1;
 
 /* allow certain non-interactive (insecure) window operations such as:
-   setting the clipboard text */
+ * setting the clipboard text */
 int allowwindowops = 0;
 
 /*
