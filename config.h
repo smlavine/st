@@ -124,36 +124,32 @@ static const char *colorname[] = {
 };
  
 static const char *altcolorname[] = {
-	/* default colorscheme of st */
+	/* dracula color theme -- inverted */
 	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
+	[0] = "#ffffff", /* black   */
+	[1] = "#00aaaa", /* red     */
+	[2] = "#af0584", /* green   */
+	[3] = "#0e0573", /* yellow  */
+	[4] = "#426c06", /* blue    */
+	[5] = "#008639", /* magenta */
+	[6] = "#741602", /* cyan    */
+	[7] = "#444444", /* white   */
 
 	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+	[8]  = "#bbb8a5", /* black   */
+	[9]  = "#00aaaa", /* red     */
+	[10] = "#af0589", /* green   */
+	[11] = "#0e0573", /* yellow  */
+	[12] = "#426c06", /* blue    */
+	[13] = "#008639", /* magenta */
+	[14] = "#741602", /* cyan    */
+	[15] = "#000000", /* white   */
 
-	[255] = 0,
-
-	/* more colors can be added after 255 to use with DefaultXX */
-	// these colors changed from default scheme to make compatible with dracula
-	// default{fg, bg, cs, rcs} colors
-	[256] = "black", /* copy of [0]; background */
-	[257] = "gray90", /* copy of [7]; foreground */
-	[258] = "#282a36", /* defaultcs */
-	[259] = "#f8f8f2", /* defaultrcs */
+	/* special colors */
+	[256] = "#d7d5c9", /* background */
+	[257] = "#07070d", /* foreground */
+	[258] = "#07070d", /* defaultcs  */
+	[259] = "#741602", /* defaultrcs */
 };
 
 /*
