@@ -306,6 +306,7 @@ pastessh(const Arg *dummy)
 	a.s = pw;
 	ttysend(&a);
 
+	free(pw);
 	pclose(p);
 }
 
