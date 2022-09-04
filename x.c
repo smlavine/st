@@ -284,7 +284,8 @@ clippaste(const Arg *dummy)
 			xw.win, CurrentTime);
 }
 
-void pastessh(const Arg *dummy)
+void
+pastessh(const Arg *dummy)
 {
 	FILE *p;
 	char *pw = NULL;
