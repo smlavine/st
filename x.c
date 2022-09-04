@@ -53,6 +53,7 @@ typedef struct {
 /* function definitions used in config.h */
 static void clipcopy(const Arg *);
 static void clippaste(const Arg *);
+static void pastessh(const Arg *);
 static void numlock(const Arg *);
 static void selpaste(const Arg *);
 static void swapcolors(const Arg *);
@@ -281,6 +282,30 @@ clippaste(const Arg *dummy)
 	clipboard = XInternAtom(xw.dpy, "CLIPBOARD", 0);
 	XConvertSelection(xw.dpy, clipboard, xsel.xtarget, clipboard,
 			xw.win, CurrentTime);
+}
+
+void pastessh(const Arg *dummy)
+{
+	FILE *p;
+	char *pw = NULL;
+	size_t len = 0;
+	Arg a;
+
+	if ((p = popen("mypassmenu -1om ssh", "r")) == NULL) {
+		fprintf(stderr, "couldn't popen: %s\n", strerror(errno));
+		return;
+	}
+
+
+	if (getline(&pw, &len, p) == -1 && !feof(p)) {
+		fprintf(stderr, "couldn't getline: %s\n", strerror(errno));
+		return;
+	}
+
+	a.s = pw;
+	ttysend(&a);
+
+	pclose(p);
 }
 
 void
