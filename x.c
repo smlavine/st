@@ -300,6 +300,8 @@ pastessh(const Arg *dummy)
 
 	if (getline(&pw, &len, p) == -1 && !feof(p)) {
 		fprintf(stderr, "couldn't getline: %s\n", strerror(errno));
+		free(pw);  /* Yes, even on failure, see getline(3) */
+		pclose(p);
 		return;
 	}
 
